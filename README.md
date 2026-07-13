@@ -90,7 +90,51 @@ The current MQTT setup is limited to local communication between Home Assistant 
 - [EV Telemetry Integration](docs/ev-telemetry.md)
 - [Security Guidelines](docs/security.md)
 
+## Upcoming Automations
+
+The next phase will focus on presence, security, vehicle, and energy automations after the final dashboards are customized.
+
+- **Away Mode:** when everyone leaves home, turn off selected lights, verify televisions are off, and arm Blink.
+- **Arrival Mode:** disarm Blink and turn on selected entrance lights when someone returns.
+- **Vehicle Departure:** use vehicle movement or departure as an additional presence signal.
+- **Vehicle Arrival:** detect when the EV returns and trigger selected home actions.
+- **Low EV Battery:** notify when the vehicle returns home below a configured battery level.
+- **Charging Started:** notify when the charging session begins.
+- **Charging Complete:** notify when the configured charge level is reached.
+- **Tire Pressure Alert:** notify when a tire is outside the configured safe range.
+- **Stale EV Telemetry:** warn when the vehicle has not reported data for an unexpected period.
+- **Night Mode:** turn off selected lights and televisions and arm the required cameras.
+- **Energy-Aware Automations:** react to high household consumption after energy monitoring is installed.
+
+Presence and security automations will use multiple signals when possible, including Home Assistant Companion app presence, household status, and EV telemetry. Security-critical actions will not rely on a single source.
+
+## Screenshots
+
+Sanitized screenshots will be added after the dashboards are fully customized.
+
+Planned images:
+
+- Vehicle dashboard
+- HomeOps dashboard
+- Apple Home controls
+- Security dashboard without live camera feeds
+- System architecture diagram
+
+Before publication, screenshots must not show:
+
+- Local or Tailscale IP addresses
+- Browser address bars
+- Email addresses or account names
+- Wi-Fi network names
+- HomeKit pairing codes or QR codes
+- HiveMQ hostnames or MQTT credentials
+- GPS coordinates or home location maps
+- Camera feeds, faces, license plates, or private rooms
+- Device serial numbers, VINs, tokens, or unique identifiers
+
 ## Roadmap
+
+### Completed
 
 - [x] Deploy Home Assistant using Docker
 - [x] Configure secure remote access with Tailscale
@@ -100,7 +144,19 @@ The current MQTT setup is limited to local communication between Home Assistant 
 - [x] Integrate eWeLink devices
 - [x] Integrate Blink cameras
 - [x] Integrate Samsung Smart TVs
-- [ ] Build smart home dashboards
-- [ ] Add energy monitoring
 - [x] Add EV telemetry via MQTT
-- [ ] Publish sanitized documentation
+- [x] Publish sanitized documentation
+
+### In progress
+
+- [ ] Build smart home dashboards
+  - Dedicated Vehicle dashboard completed
+  - Main HomeOps dashboard customization pending
+  - Security, infrastructure, and energy views planned
+
+### Planned
+
+- [ ] Add energy monitoring
+  - Whole-home consumption monitoring
+  - Historical energy usage
+  - Energy-aware notifications and automations

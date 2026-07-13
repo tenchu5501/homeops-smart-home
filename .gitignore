@@ -1,0 +1,42 @@
+﻿# Environment variables and secrets
+.env
+*.env
+secrets.yaml
+known_devices.yaml
+
+# Home Assistant private configuration
+# The real Home Assistant configuration may contain personal data, tokens,
+# GPS coordinates, integrations, dashboards, device IDs and secrets.
+config/homeassistant/**
+!config/homeassistant/.gitkeep
+
+# Backups
+backups/**
+!backups/.gitkeep
+*.tar
+*.zip
+*.bak
+
+# Logs and databases
+*.log
+*.db
+*.db-*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# HomeOps runtime and security-sensitive data
+config/tailscale/
+config/mosquitto/
+backups/
+final-security-audit.txt
+audit-summary-safe.txt
+*.pem
+*.key
+*.crt
+*.p12
